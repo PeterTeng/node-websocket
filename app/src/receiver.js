@@ -7,8 +7,11 @@ $(document).ready(function() {
 
   // Actions in DOM
   webSocket.addEventListener("message", function(event) {
-    console.log('Message from server ', event.data);
-    $(".messages").append(`<p>${event.data}</p>`);
+    data = JSON.parse(event.data);
+    if (data.type === "message") {
+      console.log('Message from server ', data.value);
+    }
+    $(".messages").append(`<p>${data.value}</p>`);
 
     // Play sound
     // var audio = new Audio('sounds/bell.mp3');

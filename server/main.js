@@ -3,12 +3,24 @@ var Server = require('ws').Server;
 
 var server = new Server({ port: 9000 });
 
+var messages = [];
+
 server.on("connection", function(webSocket) {
   webSocket.on("message", function(message) {
-    console.log(`${new Date()} - Message Received: ${message}`);
+    object = {
+      type: "message",
+      value: `${new Date()}: ${message}`
+    };
 
-    server.clients.forEach(function(client){
-      client.send(`${new Date()}: ${message}`);
+    // Store data
+    messages.push(object);
+
+    data = JSON.stringify(object);
+
+    console.log(data);
+
+    server.clients.forEach(function(client) {
+      client.send(data);
     });
   });
 
