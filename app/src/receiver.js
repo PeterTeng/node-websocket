@@ -5,6 +5,7 @@ $(document).ready(function() {
     window.notify_bar("Connected to Socket Server.");
   });
 
+  // Actions in DOM
   webSocket.addEventListener("message", function(event) {
     console.log('Message from server ', event.data);
     $(".messages").append(`<p>${event.data}</p>`);
