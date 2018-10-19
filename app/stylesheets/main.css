@@ -22,6 +22,7 @@ html, body {
   color: white;
   font-size: 18px;
   border-radius: 8px;
+  box-shadow: 0 0 10px 0 rgba(70, 70, 70, 0.7);
 }
 
 #app-notifier.red {
@@ -43,4 +44,10 @@ html, body {
   border-radius: 50%;
   cursor: pointer;
   user-select: none;
+  box-shadow: 0 0 20px 0 rgba(70, 70, 70, 0.6);
+  transition: .3s;
+}
+
+.send-msg-btn:focus, .send-msg-btn:hover {
+  box-shadow: 0 0 35px 0 rgba(70, 70, 70, 0.8);
 }
