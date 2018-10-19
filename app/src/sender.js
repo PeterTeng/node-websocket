@@ -5,10 +5,6 @@ $(document).ready(function() {
     window.notify_bar("Connected to Socket Server.");
   });
 
-  webSocket.addEventListener("message", function(event) {
-    console.log('Message from server ', event.data);
-  });
-
   $('.send-msg-btn').on("click", function() {
     webSocket.send("Clicked!");
     $(this).css('background-color', 'rgba(22, 62, 195, 1.0)');
