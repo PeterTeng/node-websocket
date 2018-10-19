@@ -7,6 +7,6 @@ $(document).ready(function() {
 
   webSocket.addEventListener("message", function(event) {
     console.log('Message from server ', event.data);
-    $(".messages").append(`<p>${event.data}</p>`)
+    $(".messages").append(`<p>${event.data}</p>`);
   });
 });
