@@ -9,5 +9,9 @@ $(document).ready(function() {
   webSocket.addEventListener("message", function(event) {
     console.log('Message from server ', event.data);
     $(".messages").append(`<p>${event.data}</p>`);
+
+    // Play sound
+    // var audio = new Audio('sounds/bell.mp3');
+    // audio.play();
   });
 });
