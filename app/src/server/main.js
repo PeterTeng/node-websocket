@@ -1,7 +1,12 @@
+let webSocketServerConfig = {
+  host: 'localhost',
+  port: '9000'
+};
+
 // WebSocket Server
 var Server = require('ws').Server;
 
-var server = new Server({ port: 9000 });
+var server = new Server({ port: webSocketServerConfig.port });
 
 var messages = [];
 
